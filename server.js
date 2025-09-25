@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-    // Serve index.html for the root path
     if (req.url === '/' || req.url === '/index.html') {
         fs.readFile('index.html', (err, content) => {
             if (err) {
@@ -15,7 +14,7 @@ const server = http.createServer((req, res) => {
             res.end(content);
         });
     }
-    // Serve style.css
+   
     else if (req.url === '/style.css') {
         fs.readFile('style.css', (err, content) => {
             if (err) {
